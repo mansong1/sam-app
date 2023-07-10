@@ -79,7 +79,7 @@ pipeline:
                     type: KubernetesDirect
                     spec:
                       connectorRef: account.eksCluster
-                      namespace: default
+                      namespace: harness-deploy
                       labels: {}
                       annotations: {}
                       nodeSelector: {}
@@ -89,6 +89,7 @@ pipeline:
                         capabilities:
                           add: []
                           drop: []
+                        privileged: true
                       os: Linux
                       hostNames: []
             rollbackSteps: []
