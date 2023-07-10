@@ -78,7 +78,7 @@ pipeline:
                   stepGroupInfra:
                     type: KubernetesDirect
                     spec:
-                      connectorRef: account.eksCluster
+                      connectorRef: account.EKS
                       namespace: harness-deploy
                       labels: {}
                       annotations: {}
