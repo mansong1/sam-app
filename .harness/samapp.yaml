@@ -19,12 +19,6 @@ pipeline:
             deployToAll: false
             infrastructureDefinitions:
               - identifier: euwest1
-                inputs:
-                  identifier: euwest1
-                  type: AWS_SAM
-                  spec:
-                    connectorRef: <+input>
-                    region: <+input>
           execution:
             steps:
               - stepGroup:
