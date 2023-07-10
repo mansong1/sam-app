@@ -78,7 +78,19 @@ pipeline:
                   stepGroupInfra:
                     type: KubernetesDirect
                     spec:
+                      connectorRef: account.eksCluster
                       namespace: default
+                      labels: {}
+                      annotations: {}
+                      nodeSelector: {}
+                      automountServiceAccountToken: true
+                      tolerations: []
+                      containerSecurityContext:
+                        capabilities:
+                          add: []
+                          drop: []
+                      os: Linux
+                      hostNames: []
             rollbackSteps: []
         tags: {}
         failureStrategies:
