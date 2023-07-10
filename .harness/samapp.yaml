@@ -40,7 +40,7 @@ pipeline:
                         name: DownloadManifests
                         identifier: DownloadManifests
                         spec: {}
-                        failureStrategies: []
+                        timeout: 10m
                     - step:
                         type: AwsSamBuild
                         name: SAM Build
@@ -51,9 +51,11 @@ pipeline:
                           imagePullPolicy: Always
                           buildCommandOptions:
                             - "--use-container"
+                          samBuildDockerRegistryConnectorRef: org.Dockerhub
+                          envVariables: {}
                         when:
                           stageStatus: Success
-                        failureStrategies: []
+                        timeout: 10m
                     - step:
                         type: AwsSamDeploy
                         name: SAM Deploy
