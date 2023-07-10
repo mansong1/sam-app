@@ -68,9 +68,11 @@ pipeline:
                           connectorRef: account.harnessImage
                           image: harnessdev/sam-deploy:1.82.0-latest
                           imagePullPolicy: Always
+                          envVariables: {}
+                          stackName: mansong-sam
                         when:
                           stageStatus: Success
-                        failureStrategies: []
+                        timeout: 10m
                   name: SAM Step Group
                   identifier: sam_step_group
                   sharedPaths:
