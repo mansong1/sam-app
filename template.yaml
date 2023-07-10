@@ -16,7 +16,7 @@ Resources:
     Properties:
       CodeUri: hello_world/
       Handler: app.lambda_handler
-      Runtime: <+serviceVariables.runtime>
+      Runtime: {{.Values.runtime}}
       Architectures:
       - x86_64
       Events:
