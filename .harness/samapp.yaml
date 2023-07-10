@@ -51,8 +51,9 @@ pipeline:
                           imagePullPolicy: Always
                           buildCommandOptions:
                             - "--use-container"
-                          samBuildDockerRegistryConnectorRef: org.Dockerhub
+                          samBuildDockerRegistryConnectorRef: account.harnessImage
                           envVariables: {}
+                          privileged: false
                         when:
                           stageStatus: Success
                         timeout: 10m
