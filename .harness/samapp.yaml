@@ -66,7 +66,7 @@ pipeline:
                           image: harnessdev/sam-deploy:1.82.0-latest
                           imagePullPolicy: Always
                           envVariables:
-                            AWS_SESSION_TOKEN: <+secrets.getValue("account.AWS_SESSION_TOKEN")'>
+                            AWS_SESSION_TOKEN: <+secrets.getValue("account.AWS_SESSION_TOKEN")>
                           stackName: mansong-sam
                         when:
                           stageStatus: Success
