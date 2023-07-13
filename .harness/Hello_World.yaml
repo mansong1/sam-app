@@ -84,6 +84,7 @@ pipeline:
                     spec:
                       connectorRef: account.Kind
                       namespace: harness-deploy
+                      harnessImageConnectorRef: account.harnessImage
                       labels: {}
                       annotations: {}
                       nodeSelector: {}
