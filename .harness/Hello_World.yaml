@@ -15,7 +15,7 @@ pipeline:
           service:
             serviceRef: Hello_World
           environment:
-            environmentRef: account.Staging
+            environmentRef: Staging
             deployToAll: false
             infrastructureDefinitions:
               - identifier: EU_London
