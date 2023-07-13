@@ -82,9 +82,20 @@ pipeline:
                   stepGroupInfra:
                     type: KubernetesDirect
                     spec:
-                      connectorRef: account.Kind
+                      connectorRef: account.eksCluster
                       namespace: harness-deploy
+                      labels: {}
+                      annotations: {}
+                      nodeSelector: {}
+                      automountServiceAccountToken: true
+                      tolerations: []
+                      containerSecurityContext:
+                        capabilities:
+                          add: []
+                          drop: []
                       harnessImageConnectorRef: account.harnessImage
+                      os: Linux
+                      hostNames: []
             rollbackSteps: []
         tags: {}
         failureStrategies:
