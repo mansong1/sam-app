@@ -62,9 +62,14 @@ pipeline:
                           connectorRef: account.harnessImage
                           image: harnessdev/sam-deploy:1.82.0-latest
                           imagePullPolicy: Always
+                          deployCommandOptions:
+                            - "--capabilities CAPABILITY_IAM --resolve-s3 --no-fail-on-empty-changeset"
+                          envVariables: {}
+                          stackName: helloworld
+                          samVersion: v1.1
                         when:
                           stageStatus: Success
-                        failureStrategies: []
+                        timeout: 10m
                   name: SAM Step Group
                   identifier: sam_step_group
                   sharedPaths:
