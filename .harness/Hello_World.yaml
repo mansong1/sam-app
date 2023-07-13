@@ -96,7 +96,33 @@ pipeline:
                       harnessImageConnectorRef: account.harnessImage
                       os: Linux
                       hostNames: []
-            rollbackSteps: []
+            rollbackSteps:
+              - stepGroup:
+                  name: SAM Delete
+                  identifier: SAM_Delete
+                  steps:
+                    - step:
+                        type: Background
+                        name: dind
+                        identifier: dind_rollback
+                        spec:
+                          connectorRef: org.Dockerhub
+                          image: docker:dind
+                          shell: Sh
+                          privileged: true
+                  sharedPaths: []
+                  stepGroupInfra:
+                    type: KubernetesDirect
+                    spec:
+                      connectorRef: account.eksCluster
+                      namespace: harness-deploy
+                      labels: {}
+                      annotations: {}
+                      nodeSelector: {}
+                      tolerations: []
+                      containerSecurityContext:
+                        capabilities: {}
+                      os: Linux
         tags: {}
         failureStrategies:
           - onFailure:
