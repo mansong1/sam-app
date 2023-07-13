@@ -89,7 +89,6 @@ pipeline:
                         capabilities:
                           add: []
                           drop: []
-                      os: Linux
                       hostNames: []
             rollbackSteps: []
         tags: {}
