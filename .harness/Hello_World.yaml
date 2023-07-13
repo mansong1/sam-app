@@ -51,7 +51,7 @@ pipeline:
                           imagePullPolicy: Always
                           buildCommandOptions:
                             - "--use-container"
-                          samBuildDockerRegistryConnectorRef: ""
+                          samBuildDockerRegistryConnectorRef: account.harnessImage
                           envVariables:
                             SAM_CLI_TELEMETRY: "0"
                         when:
