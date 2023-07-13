@@ -70,7 +70,7 @@ pipeline:
                           envVariables:
                             SAM_CLI_TELEMETRY: "0"
                           stackName: helloworld
-                          samVersion: v1.1
+                          samVersion: ""
                         when:
                           stageStatus: Success
                         timeout: 10m
