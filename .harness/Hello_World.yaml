@@ -85,16 +85,6 @@ pipeline:
                       connectorRef: account.Kind
                       namespace: harness-deploy
                       harnessImageConnectorRef: account.harnessImage
-                      labels: {}
-                      annotations: {}
-                      nodeSelector: {}
-                      automountServiceAccountToken: true
-                      tolerations: []
-                      containerSecurityContext:
-                        capabilities:
-                          add: []
-                          drop: []
-                      hostNames: []
             rollbackSteps: []
         tags: {}
         failureStrategies:
