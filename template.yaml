@@ -10,6 +10,19 @@ Globals:
   Function:
     Timeout: 3
 
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: HelloWorld
+    Description: Hello, World
+    Author: Martin Ansong
+    SpdxLicenseId: Apache-2.0
+    LicenseUrl: LICENSE.txt
+    ReadmeUrl: README.md
+    Labels: ['tests', 'hello-world', 'harness']
+    HomePageUrl: https://github.com/mansong1/sam-app
+    SemanticVersion: 1.0.0
+    SourceCodeUrl: https://github.com/mansong1/sam-app
+
 Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
