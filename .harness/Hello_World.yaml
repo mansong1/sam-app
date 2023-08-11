@@ -66,7 +66,7 @@ pipeline:
                         identifier: SAM_Deploy
                         spec:
                           connectorRef: account.harnessImage
-                          image: mansong/sam-deploy:1.94.0-latest
+                          image: mansong/sam-deploy:1.95.0-latest
                           imagePullPolicy: Always
                           deployCommandOptions:
                             - "--capabilities CAPABILITY_IAM --resolve-s3 --no-fail-on-empty-changeset"
