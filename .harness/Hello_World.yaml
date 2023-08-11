@@ -40,7 +40,9 @@ pipeline:
                         name: DownloadManifests
                         identifier: DownloadManifests
                         spec: {}
-                        failureStrategies: []
+                        when:
+                          stageStatus: Success
+                        timeout: 10m
                     - step:
                         type: AwsSamBuild
                         name: SAM Build
@@ -48,12 +50,13 @@ pipeline:
                         spec:
                           connectorRef: account.harnessImage
                           image: harnessdev/sam-build:1.82.0-latest
-                          imagePullPolicy: Always
+                          imagePullPolicy: IfNotPresent
                           buildCommandOptions:
                             - "--use-container"
                           samBuildDockerRegistryConnectorRef: account.harnessImage
                           envVariables:
                             SAM_CLI_TELEMETRY: "0"
+                          samVersion: 1.94.0
                         when:
                           stageStatus: Success
                         timeout: 10m
@@ -63,8 +66,8 @@ pipeline:
                         identifier: SAM_Deploy
                         spec:
                           connectorRef: account.harnessImage
-                          image: harnessdev/sam-deploy:1.82.0-latest
-                          imagePullPolicy: Always
+                          image: mansong/sam-deploy:1.94.0-latest
+                          imagePullPolicy: IfNotPresent
                           deployCommandOptions:
                             - "--capabilities CAPABILITY_IAM --resolve-s3 --no-fail-on-empty-changeset"
                           envVariables:
