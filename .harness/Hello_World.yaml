@@ -52,7 +52,7 @@ pipeline:
                           imagePullPolicy: IfNotPresent
                           buildCommandOptions:
                             - "--use-container"
-                          samBuildDockerRegistryConnectorRef: account.harnessImage
+                          samBuildDockerRegistryConnectorRef: org.Dockerhub
                           envVariables:
                             SAM_CLI_TELEMETRY: "0"
                           samVersion: 1.94.0
