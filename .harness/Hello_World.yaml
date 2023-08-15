@@ -35,6 +35,15 @@ pipeline:
                         when:
                           stageStatus: Success
                     - step:
+                        type: Run
+                        name: env
+                        identifier: env
+                        spec:
+                          connectorRef: org.Dockerhub
+                          image: bash
+                          shell: Bash
+                          command: env
+                    - step:
                         type: DownloadManifests
                         name: DownloadManifests
                         identifier: DownloadManifests
