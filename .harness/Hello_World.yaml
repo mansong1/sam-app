@@ -65,7 +65,7 @@ pipeline:
                         identifier: SAM_Deploy
                         spec:
                           connectorRef: org.Dockerhub
-                          image: mansong/sam-deploy:1.95.0-latest
+                          image: harnessdev/sam-deploytest:1.0.0
                           imagePullPolicy: Always
                           deployCommandOptions:
                             - "--capabilities CAPABILITY_IAM --resolve-s3 --no-fail-on-empty-changeset"
