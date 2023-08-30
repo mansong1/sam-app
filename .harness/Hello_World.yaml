@@ -87,7 +87,7 @@ pipeline:
                     spec:
                       connectorRef: account.eksCluster
                       namespace: harness-deploy
-                      serviceAccountName: mansong-delegate
+                      serviceAccountName: mansong-sam
                       automountServiceAccountToken: true
                       harnessImageConnectorRef: account.harnessImage
             rollbackSteps: []
